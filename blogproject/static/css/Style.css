@@ -1,0 +1,118 @@
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+*{
+	margin:0;
+	padding:0;
+}
+
+body{
+    background: #D4ECF7;
+}
+
+.main-container{
+	width:100%;
+	display:table;
+	flex-direction:column;
+	margin-top: 21px;
+
+	margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    text-align: center;
+}
+
+.main-container .basic-information-wrap img
+{
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+	width: 400px;
+	height: 400px;
+
+}
+
+.main-container .basic-information-wrap
+{
+	padding-top:50px;
+	min-height: 100%;
+	min-width: 100%;
+	background-color: #A8E2FD;
+	background-size: 100% 100%;
+	padding-bottom:30px;
+	
+}
+
+#basic-information {
+	font-family: 'Jeju Gothic', sans-serif;
+
+    font-size: 25px;
+    text-align: center;
+}
+
+#study-information{
+	font-family: 'Jeju Gothic', sans-serif;
+
+    font-size: 18px;
+    text-align: center;
+}
+
+#study-information h1{
+	color:#4BBFF5;
+}
+
+#hobby-information{
+	font-family: 'Jeju Gothic', sans-serif;
+
+    font-size: 18px;
+    text-align: center;
+}
+
+#hobby-information h1{
+	color:#4BBFF5;
+}
+
+.main-container .study-information-wrap
+{
+	padding-top:50px;
+}
+
+#vr
+{
+	width: 400px;
+	height: 400px;
+}
+
+.main-container .study-information-wrap img
+{
+	width: 300px;
+	height: 300px;
+}
+
+.main-container .hobby-wrap 
+{
+	padding-top:100px;
+} 
+
+.main-container .hobby-wrap .Reading-wrap
+{
+	padding-top:60px;
+} 
+
+.main-container .hobby-wrap .Baking-wrap img
+{
+	width: 300px;
+	height: 300px;
+} 
+
+
+.main-container .hobby-wrap .Reading-wrap img
+{
+	align-items:center;
+    width: 300px;
+	height: 400px;
+}
+
+footer{
+	padding-top:100px;
+}
