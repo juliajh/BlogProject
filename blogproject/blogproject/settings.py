@@ -22,7 +22,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 STATICFILES_DIRS =[]
-
 SECRET_KEY = os.environ.get('SECRET_KEY','django-insecure-&=nxk@mxmz2$b841jd9*!%h&8_v2gfgy5(or+4l#5o*aed-()(')
 
 # SECURITY WARNING: don't run with debug turned on in production!
