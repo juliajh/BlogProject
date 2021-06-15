@@ -1,5 +1,4 @@
 """blogproject URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
@@ -13,21 +12,20 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from blog.views import aboutme, bloglist
+
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 import blog.views
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', blog.views.home, name="home"),
-    path('blog/<int:blog_id>', blog.views.detail, name='detail'),
     path('aboutme/',blog.views.aboutme,name="aboutme"),
     path('bloglist/',blog.views.bloglist,name="bloglist"),
-    path('new/',blog.views.new,name="new"),
-    path('create/',blog.views.create,name="create"),
-    path('delete/<str:id>',blog.views.delete,name="delete"),
-    path('edit/<str:id>',blog.views.edit,name="edit"),
-    path('update/<str:id>',blog.views.update,name="update"),
-]
+    path('blog/',include('blog.urls'))
+
+    #path('portfolio/',portfolio.views.portfolio,name="portfolio"),
+] +static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

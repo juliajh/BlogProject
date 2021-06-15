@@ -22,10 +22,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 STATICFILES_DIRS =[]
-SECRET_KEY = 'django-insecure-&=nxk@mxmz2$b841jd9*!%h&8_v2gfgy5(or+4l#5o*aed-()('
+
+SECRET_KEY = os.environ.get('SECRET_KEY','django-insecure-&=nxk@mxmz2$b841jd9*!%h&8_v2gfgy5(or+4l#5o*aed-()(')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (os.environ.get('Debug','True')!='False')
 
 ALLOWED_HOSTS = []
 
@@ -39,7 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'imagekit',
     'blog.apps.BlogConfig',
+   # 'portfolio.apps.PortfolioConfig',
+    'account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +61,7 @@ ROOT_URLCONF = 'blogproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['blogproject/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,9 +128,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS=[os.path.join(BASE_DIR,'blog','static')]
-STATIC_ROOT=os.path.join(BASE_DIR,'static')
+STATICFILES_DIRS=[os.path.join(BASE_DIR,'blog','static')] #현재 static 파일들이 어디에 있는지
+STATIC_ROOT=os.path.join(BASE_DIR,'static')  #static 파일을 어디에 모을건지
 
+MEDIA_URL='/media/'
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

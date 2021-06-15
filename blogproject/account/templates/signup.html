@@ -1,0 +1,12 @@
+{%extends 'base.html'%}
+{%block contents %}
+
+<div class="container">
+    <form method="POST" action="{%url 'signup'%}">
+        {%csrf_token %}
+        Username:
+    </form>
+</div>
+<form>
+</form>
+{%endblock%}
