@@ -28,7 +28,6 @@ def create(request):
     blog.title=request.POST.get('title',False)
     blog.body=request.POST.get('body',False)
     blog.pub_date=timezone.datetime.now()
-    blog.image=request.FILES['image']
     blog.save()
     return redirect('/blog/'+str(blog.id))
 
@@ -50,6 +49,7 @@ def update(request, id):
     update_blog.save()
     return redirect('detail',update_blog.id)
 
+'''
 def signup(request):
     if request.method=='POST':
         if request.POST['password1']==request.POST['password2']:
@@ -75,3 +75,4 @@ def logout(request):
         auth.logout(request)
         redirect('home')
     return render(request,'login.html')
+'''

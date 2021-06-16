@@ -4,7 +4,6 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>박주희 자기소개</title>
         <link rel="stylesheet" href="{%static 'css/AboutmeStyle.css'%}">
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
@@ -38,7 +37,11 @@
                     <br><br>공장 오염 물질 제거, 쓰레기 버리기 등 여러 VR interaction을 체험할 수 있어요.
                     <br><br><img src="{%static 'img/MainScene.PNG'%}">
                     <img src="{%static 'img/StoreScene.PNG'%}">
-                </id>}
+
+                    <br><br><br><br><h3>VR 우주 체험</h3>
+                    <br>졸업작품으로 실제 우주를 기반으로 한 VR프로젝트를 개발하고 있어요.
+                    <br><br><video width="600px" height="300px" src="{%static 'video/Space.mp4'%}" controls></video></p>
+                </id>
             </div>
 
             <div class="hobby-wrap">
@@ -58,15 +61,15 @@
                         <br>가장 좋아하는 책이에요📕
                         <br><br><img src="{%static 'img/book1.jpeg'%}">
                         <img src="{%static 'img/book2.PNG'%}">
-
                     </div>
                 </id>
             </div>
-
-            <footer>
-			</footer>
-
+            <br><br>
+            <a href="{%url 'home' %}" class="btn btn-dark">To home</a>
         </div>
     </body>
+    
+    <footer>
+    </footer>
 
 </html>

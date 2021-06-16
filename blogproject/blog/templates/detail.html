@@ -3,16 +3,49 @@
 
 {%block content%}
 
-<h1>{{blog.title}}</h1><br>
-<p>{{blog.pub_date}}</p>
+<style>
+    .main-container{
+        margin-top:5%;
+    }
+    .body{
+        justify-content: center;
+        background: hsl(0, 0%, 100%);
+        width:50%;
+        height: 200px;
+        margin-bottom:5%;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+        text-align: center;
+    }
 
-{%if blog.image %}
-<p><img scr="{{blog.image.url}}" alt=" "></p>
-{%endif%}
-<p>{{blog.body}}</p>
+    .bodytext{
+        width:90%;
+        height: 180px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+    }
 
+</style>
+<body>
+    <div class=main-container>
+        <div class="title">
+            <h1>{{blog.title}}</h1><br>
+            <p>{{blog.pub_date}}</p>
+        </div>
+        <div class="body">
+            <div class="bodytext">
+            <p><br>{{blog.body}}</p>
+        </div>
+        </div>
 
-<a href="{% url 'delete' blog.id %}">삭제하기</a>
-<a href="{% url 'edit' blog.id %}">수정하기</a>
-      
-{%endblock%}
+        <a href="{% url 'delete' blog.id %}" class="btn btn-dark" >삭제하기</a>
+        <a href="{% url 'edit' blog.id %}" class="btn btn-dark">수정하기</a>
+        <br><br>
+        <a href="{%url 'bloglist'%}" class="btn btn-dark">목록으로 돌아가기</a>
+
+        {%endblock%}
+    </div>
+</body>

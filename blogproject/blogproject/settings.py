@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'imagekit',
     'blog.apps.BlogConfig',
    # 'portfolio.apps.PortfolioConfig',
-    'account.apps.AccountConfig',
+    #'account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [
