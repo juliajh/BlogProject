@@ -25,30 +25,28 @@
 </head>
 
 <body>
+  <br><br><br>
+  <div class="main-container">
+    <div class="list-group">
+    {%for blog in blogs.all %}
+      <a href="{% url 'detail' blog.id %}" class="list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{blog.title}}</h5>
+          <small>{{blog.pub_date}}</small>
+        </div>
+        <small>{{blog.summary}}</small>
+      </a>
+    </div>
+    {% endfor %}
 
-<br><br><br>
-<div class="main-container">
-  <div class="list-group">
-  {%for blog in blogs.all %}
-    <a href="{% url 'detail' blog.id %}" class="list-group-item list-group-item-action">
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">{{blog.title}}</h5>
-        <small>{{blog.pub_date}}</small>
-      </div>
-     <!-- <p class="mb-1">Some placeholder content in a paragraph.</p>-->
-      <small>{{blog.summary}}</small>
-    </a>
   </div>
-  {% endfor %}
+
   <id id="buttons">
     <a href="{%url 'new' %}" class="btn btn-dark">글 쓰기</a>
     <a href="{%url 'home' %}" class="btn btn-dark">To home</a>
   </id>
-</div>
-
-  
-  
 </body>
+
 </html>
 
 

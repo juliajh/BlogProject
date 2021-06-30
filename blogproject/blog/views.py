@@ -28,13 +28,15 @@ def create(request):
     blog.title=request.POST.get('title',False)
     blog.body=request.POST.get('body',False)
     blog.pub_date=timezone.datetime.now()
+    if 'image' in request.FILES:
+        blog.image=request.FILES['image']
     blog.save()
     return redirect('/blog/'+str(blog.id))
 
 def delete(request, id):
     delete_blog = Blog.objects.get(id=id)
     delete_blog.delete()
-    return redirect('home')
+    return redirect('bloglist')
 
 def edit(request, id):
     edit_blog=Blog.objects.get(id=id)
