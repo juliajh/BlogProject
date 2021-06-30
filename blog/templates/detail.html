@@ -1,0 +1,53 @@
+
+{%extends 'base.html' %}
+
+{%block content%}
+
+<style>
+    .main-container{
+        margin-top:5%;
+    }
+    .body{
+        /*justify-content: center;
+        align-items: center;*/
+        background: hsl(0, 0%, 100%);
+        width: 60%;
+        height: 200px;
+        margin-bottom: 3%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    
+    .bodytext{
+        width:90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+</style>
+<body>
+    <div class=main-container>
+        <id id="title">
+            <h1>{{blog.title}}</h1><br>
+            <p>{{blog.pub_date}}</p>
+        </id>
+        
+        {% if blog.image %}
+        <p><img src="{{blog.image.url}}"style="width:60%; margin-top:3% ;" alt=""></p>
+        {% endif %}
+
+        <div class="body">
+            <div class ="bodytext">
+            <p><br>{{blog.body}}</p>
+            </div>
+        </div>
+
+        <a href="{% url 'delete' blog.id %}" class="btn btn-dark" >삭제하기</a>
+        <a href="{% url 'edit' blog.id %}" class="btn btn-dark">수정하기</a>
+        <br><br>
+        <a href="{%url 'bloglist'%}" class="btn btn-dark" style="margin-bottom: 10%">목록으로 돌아가기</a>
+
+        {%endblock%}
+    </div>
+</body>
