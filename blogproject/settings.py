@@ -29,6 +29,8 @@ DEBUG = (os.environ.get('Debug','True')!='False')
 
 ALLOWED_HOSTS = ['*']
 
+AUTH_USER_MODEL='account.CustomUser'
+
 
 # Application definition
 
@@ -41,8 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'imagekit',
     'blog.apps.BlogConfig',
-   # 'portfolio.apps.PortfolioConfig',
-    #'account.apps.AccountConfig',
+    'account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [
