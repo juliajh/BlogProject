@@ -1,12 +1,16 @@
+{%extends 'base.html' %}
+{%block content%}
+
+<!--로그인 됐을 경우 사용자 id 뜨도록-->
+{%if user.is_authenticated %}  
+{{user.username}}
+{%endif%}
 {%load static%}
+
 <!DOCTYPE html>
 <html lang='en'>
     <head>
         <style>
-            body{
-                background: #dcf2fc;
-            }
-
             .main-container{
                 margin-top: 10%;
                 height: 50%;
@@ -39,6 +43,6 @@
                 </a>
             </div>
         </div>
-
         
     </body>
+    {%endblock%}
