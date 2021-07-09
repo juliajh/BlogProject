@@ -29,6 +29,8 @@ DEBUG = (os.environ.get('Debug','True')!='False')
 
 ALLOWED_HOSTS = ['*']
 
+AUTH_USER_MODEL='account.CustomUser'
+
 
 # Application definition
 
