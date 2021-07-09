@@ -9,16 +9,12 @@
 
   <style>
     body{
-      background: #dcf2fc;
-      flex-wrap: wrap;
-      display: flex;
-      width:800px;
       justify-content: center;
-      margin:0 auto;
     }
     .list-group{
-      margin-top:5%;
+      margin:0 auto;
       width:800px;
+      margin-bottom: 20px;
     }
     #buttons{
       margin-top:5%;
@@ -44,10 +40,11 @@
 
   </div>
 
+  <a href="{%url 'new' %}" class="btn btn-light" >글쓰기</a>
+  <!--
   <id id="buttons">
     <a href="{%url 'new' %}" class="btn btn-dark">글 쓰기</a>
-    <a href="{%url 'home' %}" class="btn btn-dark">To home</a>
-  </id>
+  </id>-->
 </body>
 {%endblock%}
 

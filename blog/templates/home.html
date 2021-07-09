@@ -1,12 +1,11 @@
 {%extends 'base.html' %}
 {%block content%}
 
-<!--로그인 됐을 경우 사용자 id 뜨도록-->
+<!--로그인 됐을 경우 사용자 id 뜨도록
 {%if user.is_authenticated %}  
 {{user.username}}
 {{user.nickname}}
-{{user.university}}
-{%endif%}
+{%endif%}-->
 {%load static%}
 
 <!DOCTYPE html>
@@ -47,4 +46,6 @@
         </div>
         
     </body>
+    </html>
     {%endblock%}
+    

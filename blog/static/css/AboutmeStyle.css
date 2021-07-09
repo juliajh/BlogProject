@@ -5,16 +5,14 @@
 	padding:0;
 }
 
-.main-container{
-	width:100%;
-	display:table;
-	flex-direction:column;
-	margin-top: 21px;
+.main-container
+{
+	padding-top: 15px;
+}
 
-	margin-left: auto;
-    margin-right: auto;
-    align-items: center;
-    text-align: center;
+.main-container .basic-information-wrap
+{
+	background: white;
 }
 
 .main-container .basic-information-wrap img
@@ -28,16 +26,6 @@
 
 }
 
-.main-container .basic-information-wrap
-{
-	padding-top:50px;
-	min-height: 100%;
-	min-width: 100%;
-	background-color: #dcf2fc;
-	background-size: 100% 100%;
-	padding-bottom:30px;
-	
-}
 
 #basic-information {
 	font-family: 'Jeju Gothic', sans-serif;
@@ -54,7 +42,7 @@
 }
 
 #study-information h1{
-	color:#4BBFF5;
+	color:#467cf1;
 }
 
 #hobby-information{
@@ -65,7 +53,7 @@
 }
 
 #hobby-information h1{
-	color:#4BBFF5;
+	color:#467cf1;
 }
 
 .main-container .study-information-wrap
