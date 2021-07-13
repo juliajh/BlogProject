@@ -3,6 +3,7 @@ from .models import Blog
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.contrib import auth
+from account.forms import RegisterForm
 
 # Create your views here.
 def home(request):
@@ -30,13 +31,13 @@ def create(request):
     blog.pub_date=timezone.datetime.now()
     if 'image' in request.FILES:
         blog.image=request.FILES['image']
-    blog.writer=request.user.get_username()
+    blog.writer=request.user
     blog.save()
     return redirect('/blog/'+str(blog.id))
 
 def delete(request, id):
     delete_blog = Blog.objects.get(id=id)
-    if delete_blog.writer == User.objects.get(username = request.user.get_username()):
+    if delete_blog.writer == request.user:
         delete_blog.delete()
     return redirect('bloglist')
 
@@ -54,4 +55,3 @@ def update(request, id):
     update_blog.writer=request.user.get_username()
     update_blog.save()
     return redirect('detail',update_blog.id)
-

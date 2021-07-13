@@ -44,8 +44,10 @@
 
 
         {%if user.is_authenticated %}
+        {%if user.username==blog.writer %}
         <a href="{%url 'delete' blog.id %}" class="btn btn-light" >삭제하기</a>
         <a href="{%url 'edit' blog.id %}" class="btn btn-light" >수정하기</a>
+        {%endif%}
         {%endif%}
         
         <br><br>
