@@ -42,8 +42,11 @@
             </div>
         </div>
 
+
+        {%if user.is_authenticated %}
         <a href="{%url 'delete' blog.id %}" class="btn btn-light" >삭제하기</a>
         <a href="{%url 'edit' blog.id %}" class="btn btn-light" >수정하기</a>
+        {%endif%}
         
         <br><br>
         <a href="{%url 'bloglist'%}" class="btn btn-light" style="margin-bottom: 10%">목록으로 돌아가기</a>

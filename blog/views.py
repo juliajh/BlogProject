@@ -30,12 +30,14 @@ def create(request):
     blog.pub_date=timezone.datetime.now()
     if 'image' in request.FILES:
         blog.image=request.FILES['image']
+    blog.writer=request.user.get_username()
     blog.save()
     return redirect('/blog/'+str(blog.id))
 
 def delete(request, id):
     delete_blog = Blog.objects.get(id=id)
-    delete_blog.delete()
+    if delete_blog.writer == User.objects.get(username = request.user.get_username()):
+        delete_blog.delete()
     return redirect('bloglist')
 
 def edit(request, id):
@@ -47,34 +49,9 @@ def update(request, id):
     update_blog.title=request.POST.get('title',False)
     update_blog.body=request.POST.get('body',False)
     update_blog.pub_date=timezone.datetime.now()
-    update_blog.image=request.POST.get('image','')
+    if 'image' in request.FILES:
+        update_blog.image=request.FILES['image']
+    update_blog.writer=request.user.get_username()
     update_blog.save()
     return redirect('detail',update_blog.id)
 
-'''
-def signup(request):
-    if request.method=='POST':
-        if request.POST['password1']==request.POST['password2']:
-            user=User.objects.create_user(username=request.POST['username'], password=request.POST['password1'])
-            auth.login(request.user)
-            return redirect('home')
-    return render(request,'signup.html')
-
-def login(request):
-    if request.method=='POST':
-        username=request.POST['username']
-        password=request.POST['password']
-        user=auth.authenticate(request,username=username,password=password)
-        if user is not None:
-            auth.login(request,user)
-            return redirect('home')
-        else:
-            return render(request,'login.html',{'error':'username or password is incorrect.'})
-    return render(request,'login.html')
-
-def logout(request):
-    if request.method=='POST':
-        auth.logout(request)
-        redirect('home')
-    return render(request,'login.html')
-'''

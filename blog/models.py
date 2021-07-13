@@ -7,6 +7,7 @@ class Blog(models.Model):
     pub_date=models.DateTimeField()
     body=models.TextField()
     image=models.ImageField(upload_to='blog/',blank=True,null=True)  #업로드할 파일 지정
+    writer=models.CharField(max_length=50)
 
     def __str__(self):
         return self.title

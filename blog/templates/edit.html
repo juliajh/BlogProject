@@ -9,7 +9,7 @@
 </style>
 
 <div class="container">
-    <form action="{%url 'update' blog.id%}" method="POST">
+    <form action="{%url 'update' blog.id%}" method="POST"  enctype="multipart/form-data">
         {%csrf_token%}
 
         <div class="mb-3">
@@ -20,10 +20,7 @@
             <label for="exampleFormControlTextarea1" class="form-label">본문</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="body" placeholder="내용을 입력하세요">{{blog.body}}</textarea>
         </div>
-        <!--
-        <p>제목: <input type="text" name="title" value="{{blog.title}}"></p>
-        <p>본문: <textarea name="body" id="" cols=30 rows="10">{{blog.body}}</textarea></p>
-    --> <p>사진 : <input type="file" name="image"></p>
+        <p>사진 : <input type="file" name="image"></p>
         <input class="btn btn-light" type="submit" value="제출하기">
     </form>
 </div>

@@ -11,6 +11,7 @@
     body{
       justify-content: center;
     }
+    
     .list-group{
       margin:0 auto;
       width:800px;
@@ -34,17 +35,15 @@
           <small>{{blog.pub_date}}</small>
         </div>
         <small>{{blog.summary}}</small>
+                
+        {{blog.writer}}
       </a>
-    </div>
     {% endfor %}
+    </div>
 
   </div>
 
   <a href="{%url 'new' %}" class="btn btn-light" >글쓰기</a>
-  <!--
-  <id id="buttons">
-    <a href="{%url 'new' %}" class="btn btn-dark">글 쓰기</a>
-  </id>-->
 </body>
 {%endblock%}
 
