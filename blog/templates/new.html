@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+{%block content %}
+<style>
+    .container{
+        margin-top:5%;
+        width:70%;
+    }
+</style>
+
+    <div class="container">
+        <form action="{%url 'create' %}" method="POST" enctype="multipart/form-data">
+            {%csrf_token%}
+
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">제목</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="제목을 입력하세요" name="title">
+            </div>
+            
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">본문</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="body" placeholder="내용을 입력하세요"></textarea> 
+            </div>
+            <p>사진 : <input type="file" name="image"></p>
+
+            <input class="btn btn-light" type="submit" value="제출하기">
+            
+        </form>
+    </div>
+{%endblock%}
