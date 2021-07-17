@@ -1,0 +1,81 @@
+
+{%extends 'base.html' %}
+{%block content%}
+
+{%load static%}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{%static 'css/AboutmeStyle.css'%}">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    </head>
+
+
+    <body>
+        <div class="main-container">
+            <header>
+                <div class="basic-information-wrap">
+                    <br><br>
+                    <img src="{%static 'img/mypic.png'%}">
+                    <id id="basic-information">
+                        <br><br><strong>Name:</strong> 박주희<br>
+                        <strong>Age:</strong> 23<br>
+                        <strong>Major:</strong> 응용컴퓨터공학과<br>
+                    </id>
+                    <br><br>
+                </div>
+            </header>
+
+            <div class="study-information-wrap">
+                <id id="study-information">
+                    <h1>What I study</h1>
+                    <br><br><h3>VR 어린이 환경 교육</h3>
+                    <br>어린이에게 환경을 교육할 수 있는 VR콘텐츠를 만들고 있어요😀</p>
+                    <br><img id='vr' src="{%static 'img/VR.jpg'%}"></p><br>
+                    <br><br>실제 날씨와 시간을 받아와서 콘텐츠 내 환경에 적용해요.
+                    <br><video width="600px" height="250px" src="{%static 'video/Lighting.mp4'%}" controls></video></p>
+                    <br><br><br>마을에서 미니 게임을 통해 코인을 얻고 식물을 사고 키울 수 있어요🌿
+                    <br><br>공장 오염 물질 제거, 쓰레기 버리기 등 여러 VR interaction을 체험할 수 있어요.
+                    <br><br><img src="{%static 'img/MainScene.PNG'%}">
+                    <img src="{%static 'img/StoreScene.PNG'%}">
+
+                    <br><br><br><br><h3>VR 우주 체험</h3>
+                    <br>졸업작품으로 실제 우주를 기반으로 한 VR프로젝트를 개발하고 있어요.
+                    <br><br><video width="600px" height="300px" src="{%static 'video/Space.mp4'%}" controls></video></p>
+                </id>
+            </div>
+
+            <div class="hobby-wrap">
+                <id id="hobby-information">
+                    <h1>Hobby</h1>
+                    <div class="Baking-wrap">
+                        <br><h3>Baking</h3>
+                        <br>잘하지는 않지만 베이킹하면서 스트레스를 풀어요🥐
+                        <br><br><img src="{%static 'img/bake1.jpg'%}">
+                        <img src="{%static 'img/bake2.jpg'%}"><br>
+                        <img src="{%static 'img/bake3.jpg'%}">
+                        <img src="{%static 'img/bake4.jpg'%}">
+                    </div>
+
+                    <div class="Reading-wrap">
+                        <h3>Reading</h3>
+                        <br>가장 좋아하는 책이에요📕
+                        <br><br><img src="{%static 'img/book1.jpeg'%}">
+                        <img src="{%static 'img/book2.PNG'%}">
+                    </div>
+                </id>
+            </div>
+            <br><br>
+        </div>
+    </body>
+    
+    <footer>
+    </footer>
+    {%endblock%}
+
+</html>

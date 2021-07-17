@@ -14,4 +14,8 @@ class Blog(models.Model):
         return self.title
     
     def summary(self):
-        return self.body[:100]
+        if len(self.body)>70:
+            return self.body[:70]+'...'
+        else:
+            return self.body
+
