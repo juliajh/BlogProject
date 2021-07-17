@@ -11,36 +11,30 @@
     body{
       justify-content: center;
     }
-    
-    .list-group{
-      margin:0 auto;
-      width:800px;
-      margin-bottom: 20px;
+    #card{
     }
-    #buttons{
-      margin-top:5%;
-    }
+
+
   </style>
 
 </head>
 
 <body>
   <br><br><br>
-  <div class="main-container">
-    <div class="list-group">
+  <div class="row row-cols-1 row-cols-md-3 g-4" id="main-container">
     {%for blog in blogs.all %}
-      <a href="{% url 'detail' blog.id %}" class="list-group-item list-group-item-action">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">{{blog.title}}</h5>
-          <small>{{blog.pub_date}}</small>
+    <a href="{% url 'detail' blog.id %}">
+      <div class="col">
+        <div class="card h-100" id="card">
+          <img src="{{blog.image.url}}" class="card-img-top" style="width:300px; height:300px;"alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{blog.title}}</h5>
+            <p class="card-text">{{blog.summary}}</p>
+          </div>
         </div>
-        <small>{{blog.summary}}</small>
-                
-        {{blog.writer}}
-      </a>
+      </div>
+    </a>
     {% endfor %}
-    </div>
-
   </div>
 
 
@@ -52,6 +46,7 @@
   </div>
   {%endif%}
 </body>
+
 {%endblock%}
 
 </html>
