@@ -10,7 +10,7 @@
 	padding-top: 15px;
 }
 
-.main-container .basic-information-wrap
+.basic-information-wrap
 {
 	background: white;
 }
@@ -28,6 +28,7 @@
 
 
 #basic-information {
+	
 	font-family: 'Jeju Gothic', sans-serif;
 
     font-size: 25px;

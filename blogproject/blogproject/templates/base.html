@@ -8,6 +8,8 @@
     </head>
 
     <style>
+      @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
       body{
         margin:0 auto;
         text-align: center;
@@ -19,14 +21,14 @@
     <body style="background: #cee2fc;">
       <ul class="nav justify-content-end">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{%url 'home' %}">Home</a>
+          <a class="nav-link active" aria-current="page" style="font-family: 'Jeju Gothic', sans-serif;" href="{%url 'home' %}">Home</a>
         </li>
         {%if not user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{%url 'login' %}">Login</a>
+          <a class="nav-link active" aria-current="page" style="font-family: 'Jeju Gothic', sans-serif;" href="{%url 'login' %}">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{%url 'signup' %}">SignUp</a>
+          <a class="nav-link active" aria-current="page" style="font-family: 'Jeju Gothic', sans-serif;" href="{%url 'signup' %}">SignUp</a>
         </li>
         {%endif%}
         {%if user.is_authenticated %}

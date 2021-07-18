@@ -2,11 +2,14 @@
 {%block content%}
 
 <style>
+    @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
     #main-container{
         margin-top:5%;
         width: 70%;
         margin-left: auto;
         margin-right: auto;
+        border-radius: 20px;
     }
     .body{
         /*justify-content: center;
@@ -27,35 +30,20 @@
     .card-sub{
         text-align: right;
         margin-right:20px;
+        font-family: 'Jeju Gothic', sans-serif;
     }
     .card-body{
         width:80%;
         margin-left: auto;
         margin-right: auto;
         margin-bottom:30px;
+        font-family: 'Jeju Gothic', sans-serif;
     }
 
 </style>
 <body>
-    <!--
-    <div class=main-container>
-        <id id="title">
-            <h1>{{blog.title}}</h1><br>
-            <p>{{blog.pub_date}}</p>
-        </id>
-        
-        {% if blog.image %}
-        <p><img src="{{blog.image.url}}"style="width:60%; margin-top:3% ;" alt=""></p>
-        {% endif %}
-
-        <div class="body">
-            <div class ="bodytext">
-            <p><br>{{blog.body}}</p>
-            </div>
-        </div>
-    -->
     <div class="card mb-3" id="main-container">
-        <br><h1 class="card-title">{{blog.title}}</h1><br>
+        <br><h1 class="card-title" style="font-family: 'Jeju Gothic', sans-serif;">{{blog.title}}</h1><br>
         <div class="card-sub">
             <strong><h4>{{blog.writer}}</strong></h4>
             {{blog.pub_date}}
@@ -69,13 +57,13 @@
 
         {%if user.is_authenticated %}
             {%if user.username == blog.writer.username %}
-                <a href="{%url 'delete' blog.id %}" class="btn btn-light" >삭제하기</a>
-                <a href="{%url 'edit' blog.id %}" class="btn btn-light" >수정하기</a>
+                <a href="{%url 'delete' blog.id %}" style="font-family: 'Jeju Gothic', sans-serif;"class="btn btn-light" >삭제하기</a>
+                <a href="{%url 'edit' blog.id %}" style="font-family: 'Jeju Gothic', sans-serif;" class="btn btn-light" >수정하기</a>
             {%endif%}
         {%endif%}
         
         <br><br>
-        <a href="{%url 'bloglist'%}" class="btn btn-light" style="margin-bottom: 10%">목록으로 돌아가기</a>
+        <a href="{%url 'bloglist'%}" class="btn btn-light" style="margin-bottom: 10%; font-family: 'Jeju Gothic', sans-serif;">목록으로 돌아가기</a>
         {%endblock%}
     </div>
 </body>
