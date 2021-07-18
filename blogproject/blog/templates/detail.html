@@ -43,11 +43,12 @@
 </style>
 <body>
     <div class="card mb-3" id="main-container">
-        <br><h1 class="card-title" style="font-family: 'Jeju Gothic', sans-serif;">{{blog.title}}</h1><br>
+        <br><br><h1 class="card-title" style="font-family: 'Jeju Gothic', sans-serif;">{{blog.title}}</h1><br>
         <div class="card-sub">
             <strong><h4>{{blog.writer}}</strong></h4>
             {{blog.pub_date}}
         </div>
+        
         <img src="{{blog.image.url}}" class="card-img-top" alt="...">
         <div class="card-body">
           {{blog.body}}

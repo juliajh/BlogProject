@@ -2,27 +2,35 @@
 
 {%block content %}
 <style>
+    @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
     .container{
         margin-top:5%;
         width:70%;
+        font-family: 'Jeju Gothic', sans-serif;
     }
 </style>
 
-<div class="container">
-    <form action="{%url 'update' blog.id%}" method="POST"  enctype="multipart/form-data">
-        {%csrf_token%}
+<body>
+    <div class="container">
+        <form action="{%url 'update' blog.id%}" method="POST"  enctype="multipart/form-data">
+            {%csrf_token%}
 
-        <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">제목</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="제목을 입력하세요" name="title" value="{{blog.title}}">
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">본문</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="body" placeholder="내용을 입력하세요">{{blog.body}}</textarea>
-        </div>
-        <p>사진 : <input type="file" name="image"></p>
-        <input class="btn btn-light" type="submit" value="제출하기">
-    </form>
-</div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label"></label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="title" value="{{blog.title}}"><br>
+            
+                <div class="form-floating">
+                    <textarea class="form-control" id="floatingTextarea2" name="body" style="height: 300px;">{{blog.body}}</textarea>
+                </div>
 
+                <div class="input-group mb-3" style="margin-top: 20px;">
+                    <input type="file" class="form-control" id="inputGroupFile02" name="image">
+                    <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                </div>
+            </div>
+            <input class="btn btn-light" type="submit" value="제출하기">
+        </form>
+    </div>
+</body>
 {%endblock%}

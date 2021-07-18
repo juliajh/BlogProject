@@ -33,10 +33,10 @@
         {%endif%}
         {%if user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="">{{user.username}}</a>
+          <a class="nav-link active" aria-current="page" style="font-family: 'Jeju Gothic', sans-serif;" href="">{{user.username}}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{%url 'logout' %}">Logout</a>
+          <a class="nav-link active" aria-current="page" style="font-family: 'Jeju Gothic', sans-serif;" href="{%url 'logout' %}">Logout</a>
         </li>
         {%endif%}
       </ul>
