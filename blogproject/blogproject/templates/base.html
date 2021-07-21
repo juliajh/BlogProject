@@ -118,81 +118,35 @@ a:hover {
 
 </style>
 
-<script>
-
-$('#loginform').click(function(){
-  $('.login').fadeToggle('slow');
-  $(this).toggleClass('green');
-});
-
+<body style="background: #cee2fc;">
+  <ul class="nav justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" style="font-family: 'Jeju Gothic', sans-serif;" href="{%url 'home' %}">Home</a>
+    </li>
 
 
-$(document).mouseup(function (e)
-{
-    var container = $(".login");
 
-    if (!container.is(e.target) // if the target of the click isn't the container...
-        && container.has(e.target).length === 0) // ... nor a descendant of the container
-    {
-        container.hide();
-        $('#loginform').removeClass('green');
-    }
-});
+    {%if not user.is_authenticated %}
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" style="font-family: 'Jeju Gothic', sans-serif;" href="{%url 'login' %}">Login</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" style="font-family: 'Jeju Gothic', sans-serif;" href="{%url 'signup' %}">SignUp</a>
+    </li>
+    {%endif%}
+    {%if user.is_authenticated %}
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" style="font-family: 'Jeju Gothic', sans-serif;" href="">{{user.username}}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" style="font-family: 'Jeju Gothic', sans-serif;" href="{%url 'logout' %}">Logout</a>
+    </li>
+    {%endif%}
+  </ul>
 
-    </script>
-
-    <body style="background: #cee2fc;">
-      <ul class="nav justify-content-end">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" style="font-family: 'Jeju Gothic', sans-serif;" href="{%url 'home' %}">Home</a>
-        </li>
-
-
-        <div id="wrap">
-          <div id="regbar">
-            <div id="navthing">
-              <h2><a href="#" id="loginform">Login</a> | <a href="#">Register</a></h2>
-            <div class="login">
-              <div class="arrow-up"></div>
-              <div class="formholder">
-                <div class="randompad">
-                   <fieldset>
-                     <label name="email">Email</label>
-                     <input type="email" value="example@example.com" />
-                     <label name="password">Password</label>
-                     <input type="password" />
-                     <input type="submit" value="Login" />
-         
-                   </fieldset>
-                </div>
-              </div>
-            </div>
-            </div>
-          </div>
-        </div>
-
-
-        {%if not user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" style="font-family: 'Jeju Gothic', sans-serif;" href="{%url 'login' %}">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" style="font-family: 'Jeju Gothic', sans-serif;" href="{%url 'signup' %}">SignUp</a>
-        </li>
-        {%endif%}
-        {%if user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" style="font-family: 'Jeju Gothic', sans-serif;" href="">{{user.username}}</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" style="font-family: 'Jeju Gothic', sans-serif;" href="{%url 'logout' %}">Logout</a>
-        </li>
-        {%endif%}
-      </ul>
-    
-      <div class="container">
-      {% block content%}
-      {%endblock%}
-      </div>      
-    </body>
+  <div class="container">
+  {% block content%}
+  {%endblock%}
+  </div>      
+</body>
 </html>
